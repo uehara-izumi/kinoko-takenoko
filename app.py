@@ -12,7 +12,7 @@ app = Flask(__name__)
 ACCESS_TOKEN = "ZWqC9dOrT8Rpi8YHLYkZiPT7IMB0TTiOlhgEM3qeQrEMwInbLhRAqo3wqbesJea5KIuUoa/9+TdFcxMeNo/g0VyiOKEm7pgq41jeYVy+gsqX8aVNyvkkJoP0pqiAhStUvWGK1MfATE6lzHhsIvIZDAdB04t89/1O/w1cDnyilFU="
 SECRET = "818b6f3efb27d959f5e315aaa7886864"
 
-FQDN = "https://izuminapp.herokuapp.com"
+FQDN = "https://kinoko-takenoko.herokuapp.com"
 
 
 line_bot_api = LineBotApi(ACCESS_TOKEN)
