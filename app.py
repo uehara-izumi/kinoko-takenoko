@@ -52,12 +52,12 @@ def handle_image_message(event):
             result_predict = 1 - result_predict
             okashi = "きのこの山"
             result_predict = result_predict * 100
-            per = '{:.1f}'.format(result_predict)
+            #per = '{:.1f}'.format(result_predict)
         elif result_predict >= 0.5:
             okashi = "たけのこの里"
             result_predict = result_predict * 100
-            per = '{:.1f}'.format(result_predict)
-        text = "これは"+ per+ "%の確率で" + okashi + "です。"
+            #per = '{:.1f}'.format(result_predict)
+        text = "これは"+ result_predict+ "%の確率で" + okashi + "です。"
 ##############################################################
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
       
