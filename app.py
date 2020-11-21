@@ -6,7 +6,6 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import (MessageEvent, TextMessage, TextSendMessage, ImageMessage, ImageSendMessage)
 from keras.models import load_model
 from keras.preprocessing import image
-import cnn_model
 
 app = Flask(__name__)
 
