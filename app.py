@@ -60,7 +60,7 @@ def handle_image_message(event):
             per = np.round(res, decimals=1)
             #per = round(res, 1)
             
-        text = "これは"+ per.tostring() + "%の確率で" + okashi + "です。"
+        text = "これは"+ str(per) + "%の確率で" + okashi + "です。"
 ##############################################################
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
       
