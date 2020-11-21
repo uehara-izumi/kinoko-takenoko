@@ -57,7 +57,8 @@ def handle_image_message(event):
             okashi = "たけのこの里"
             result_predict = result_predict * 100
             #per = '{:.1f}'.format(result_predict)
-        text = "これは"+ result_predict+ "%の確率で" + okashi + "です。"
+            
+        text = "これは"+ okashi + "です。"
 ##############################################################
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
       
