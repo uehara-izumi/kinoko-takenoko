@@ -47,20 +47,19 @@ def handle_image_message(event):
 
         model = load_model('okashi.h5')
         result_predict = model.predict(x)
-        res = result_predict[0]
+        res = result_predict.data[0]
         if res < 0.5:
             res = 1 - res
             okashi = "きのこの山"
-            res = res * 100
+            per = res * 100
             #per = np.round(res, decimals=1)
             #per = round(res, 1)
         else:
             okashi = "たけのこの里"
-            res = res * 100
+            per = res * 100
             #per = np.round(res, decimals=1)
             #per = round(res, 1)
-            
-        text = "これは"+ str(np.round(res, decimals=1).data[0]) + "%の確率で" + okashi + "です。"
+        text = "これは"+ str(np.round(per, decimals=1)) + "%の確率で" + okashi + "です。"
 ##############################################################
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
       
