@@ -52,13 +52,13 @@ def handle_image_message(event):
             res = 1 - res
             okashi = "きのこの山"
             res = res * 100
-            res = np.round(res, decimals=1)
-            per = round(res, 1)
+            per = np.round(res, decimals=1)
+            #per = round(res, 1)
         else:
             okashi = "たけのこの里"
             res = res * 100
-            res = np.round(res, decimals=1)
-            per = round(res, 1)
+            per = np.round(res, decimals=1)
+            #per = round(res, 1)
             
         text = "これは"+ per + "%の確率で" + okashi + "です。"
 ##############################################################
