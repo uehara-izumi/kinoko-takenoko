@@ -48,15 +48,16 @@ def handle_image_message(event):
         model = load_model('okashi.h5')
         result_predict = model.predict(x)
         res = result_predict[0]
-
         if res < 0.5:
             res = 1 - res
             okashi = "きのこの山"
             res = res * 100
+            res = np.round(res, decimals=1)
             per = round(res, 1)
-        elif res >= 0.5:
+        else:
             okashi = "たけのこの里"
             res = res * 100
+            res = np.round(res, decimals=1)
             per = round(res, 1)
             
         text = "これは"+ per + "%の確率で" + okashi + "です。"
