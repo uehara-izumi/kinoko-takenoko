@@ -45,7 +45,7 @@ def handle_image_message(event):
         x = np.expand_dims(x, axis=0)
         x = x / 255.0
 
-        model = load_model('kinotake_0_1_20.h5')
+        model = load_model('kinotake_mix_0_01_ep50.h5')
         result_predict = model.predict(x)
         res = result_predict[0]
         if res < 0.5:
