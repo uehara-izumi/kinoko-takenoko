@@ -59,7 +59,7 @@ def handle_image_message(event):
         elif res[0]>=0.5:
             okashi = "たけのこの里"
             per = res[0] * 100
-        np.set_printoptions(precision=3)
+        np.set_printoptions(precision=1)
         text = "これは"+ str(per).strip("[]") + "%の確率で" + okashi + "です。"
 
 ##############################################################
