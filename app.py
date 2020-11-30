@@ -60,7 +60,7 @@ def handle_image_message(event):
             okashi = "たけのこの里"
             per = res[0] * 100
         np.set_printoptions(precision=3)
-        text = "これは"+ str(per[0]).strip("[]") + "%の確率で" + okashi + "です。"
+        text = "これは"+ str(per).strip("[]") + "%の確率で" + okashi + "です。"
 
 ##############################################################
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
