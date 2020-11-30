@@ -47,24 +47,21 @@ def handle_image_message(event):
 
         model = load_model('kinotake_mix_0_01_ep50.h5')
         result_predict = model.predict(x)
-        res = result_predict[0]
-        '''
-        if res < 0.5:
-            res = 1 - res
+        #res = result_predict[0]
+
+        res = np.array(result_predict)
+        if res[0] < 0.5:
+            res[0] = 1 - res[0]
+            print(res[0])
             okashi = "きのこの山"
-            per = res * 100
-            #per = np.round(res, decimals=1)
-            #per = round(res, 1)
-        else:
+            per = res[0] * 100
+    
+        elif res[0]>=0.5:
             okashi = "たけのこの里"
-            per = res * 100
-            #per = np.round(res, decimals=1)
-            #per = round(res, 1)
-        
-        ans = np.round(per[0], decimals=1)
-        text = "これは"+ str(ans) + "%の確率で" + okashi + "です。"
-        '''
-        text = str(res)
+            per = res[0] * 100
+        np.set_printoptions(precision=3)
+        text = "これは"+ str(per) + "%の確率で" + okashi + "です。"
+
 ##############################################################
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=text))
       
